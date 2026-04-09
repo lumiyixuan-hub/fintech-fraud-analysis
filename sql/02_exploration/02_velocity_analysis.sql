@@ -7,7 +7,7 @@ WITH account_activity AS (
     SELECT
         nameOrig,
         step,
-        COUNT(*)        AS txn_count,
+        COUNT(*)        AS txn_count,     -- transaction count
         MAX(isFraud)    AS is_fraud_account
     FROM transactions
     WHERE type IN ('TRANSFER', 'CASH_OUT')
