@@ -112,17 +112,6 @@ GROUP BY step
 ORDER BY step;
 
 
-SELECT
-    step,
-    COUNT(*)                                        AS total_txn,
-    SUM(isFraud)                                    AS fraud_count,
-    ROUND(SUM(isFraud) * 100.0 / COUNT(*), 4)      AS fraud_rate
-FROM transactions
-WHERE type IN ('TRANSFER', 'CASH_OUT')
-GROUP BY step
-ORDER BY step;
-
-
 -- =============================================
 -- EDA Query 5b: Fraud Distribution by Hour of Day
 -- Purpose: Identify whether fraud concentrates at specific hours regardless of which day
